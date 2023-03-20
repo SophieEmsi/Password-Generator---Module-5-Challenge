@@ -95,5 +95,19 @@ function getPasswordOptions () {
   if (passwordLength < 8 || passwordLength > 128) {
     alert ("Try again. Please enter number between 8 - 128")
   }
-}
 
+
+var hasLowercase = confirm ("Would you like Lowercase characters?")
+
+var hasUppercase = confirm ("Would you like Uppercase characters?")
+
+var hasNumeric = confirm ("Would you like Numeric characters?")
+
+var hasSpecial = confirm ("Would you like Special characters?")
+
+if (hasLowercase === false && hasUppercase === false && hasNumeric === false && hasSpecial === false)
+  alert ("Please select at least one character type")
+}
+  console.log(getPasswordOptions);
+
+  
