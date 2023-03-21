@@ -154,4 +154,13 @@ if (options.special) {
 }
 console.log(passwordSelection)
 
+var finalPassword = []
+
+for (i = 0; i < options.length; ++i) {
+  var randomSelection = Math.floor(Math.random() * Math.floor(passwordSelection.length));
+   finalPassword.push(passwordSelection[randomSelection])
 }
+
+  return finalPassword;
+}
+
