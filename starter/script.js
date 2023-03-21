@@ -90,40 +90,68 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 
-function getPasswordOptions () {
-  var passwordLength = prompt ("Select how many characters between 8 - 128 you would like your password to be"); 
-  if (passwordLength < 8 || passwordLength > 128) {
-    alert ("Try again. Please enter number between 8 - 128")
+
+
+function getPasswordOptions() {
+  var passwordLength = prompt("Select how many characters between 8 - 128 you would like your password to be");
+    if (passwordLength < 8 || passwordLength > 128) {
+     alert("Try again. Please enter number between 8 - 128")
+    }
+  
+  var hasLowercase = confirm("Would you like Lowercase characters?")
+  
+  var hasUppercase = confirm("Would you like Uppercase characters?")
+  
+  var hasNumeric = confirm("Would you like Numeric characters?")
+  
+  var hasSpecial = confirm("Would you like Special characters?")
+
+  if  (hasLowercase === false && hasUppercase === false && hasNumeric === false && hasSpecial === false) {
+    alert("Please select at least one character type")
   }
-
-
-  var hasLowercase = confirm ("Would you like Lowercase characters?")
-
-  var hasUppercase = confirm ("Would you like Uppercase characters?")
-
-  var hasNumeric = confirm ("Would you like Numeric characters?")
-
-  var hasSpecial = confirm ("Would you like Special characters?")
-
-  if (hasLowercase === false && hasUppercase === false && hasNumeric === false && hasSpecial === false)
-    alert ("Please select at least one character type")
-}
-
-  getPasswordOptions();
-
+ 
   console.log(getPasswordOptions);
 
-  var passwordCharacters = {
-      length: passwordLength,
-      lowerCase: hasLowercase,
-      upperCase: hasUppercase,
-      numeric: hasNumeric,
-      special: hasSpecial,
-  };
-  
-  return passwordCharacters;
-  
-function generatePassword() {
+var passwordCharacters = {
+  length: passwordLength,
+  lowerCase: hasLowercase,
+  upperCase: hasUppercase,
+  numeric: hasNumeric,
+  special: hasSpecial,
+};
+
+return passwordCharacters;
 
 }
+
+function generatePassword() {
+
+  var options = getPasswordOptions ();
+  console.log(options);
+
+  var passwordSelection = [];
   
+
+if (options.lowerCase) {
+    for (i = 0; i < lowerCasedCharacters.length; ++i) {
+        passwordSelection.push(lowerCasedCharacters[i]);
+    }
+} 
+if (options.upperCase) {
+    for (i = 0; i < upperCasedCharacters.length; ++i) {
+    passwordSelection.push(upperCasedCharacters[i]);
+    }
+}
+if (options.numeric) {
+    for (i = 0; i < numericCharacters.length; ++i) {
+    passwordSelection.push(numericCharacters[i]);
+    }
+}
+if (options.special) {
+    for (i = 0; i < specialCharacters.length; ++i) {
+    passwordSelection.push(specialCharacters[i]);
+    }
+}
+console.log(passwordSelection)
+
+}
