@@ -10,6 +10,6 @@ Having this system that automatically generates a random password between 8 - 12
 
 During this project I was able to practice how to use Javascript functions, arrays and loops which used the information from each other to produce a random set of characters. 
 
-![Password Generator](![Alt text](Assets/Screenshot%202023-03-21%20at%2018.45.41.png))]
+![Alt text](Assets/Screenshot%202023-03-21%20at%2018.45.41.png))]
 
-
+https://sophieemsi.github.io/Password-Generator---Module-5-Challenge/
