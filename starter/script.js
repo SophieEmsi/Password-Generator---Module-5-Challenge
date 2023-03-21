@@ -97,17 +97,33 @@ function getPasswordOptions () {
   }
 
 
-var hasLowercase = confirm ("Would you like Lowercase characters?")
+  var hasLowercase = confirm ("Would you like Lowercase characters?")
 
-var hasUppercase = confirm ("Would you like Uppercase characters?")
+  var hasUppercase = confirm ("Would you like Uppercase characters?")
 
-var hasNumeric = confirm ("Would you like Numeric characters?")
+  var hasNumeric = confirm ("Would you like Numeric characters?")
 
-var hasSpecial = confirm ("Would you like Special characters?")
+  var hasSpecial = confirm ("Would you like Special characters?")
 
-if (hasLowercase === false && hasUppercase === false && hasNumeric === false && hasSpecial === false)
-  alert ("Please select at least one character type")
+  if (hasLowercase === false && hasUppercase === false && hasNumeric === false && hasSpecial === false)
+    alert ("Please select at least one character type")
 }
+
+  getPasswordOptions();
+
   console.log(getPasswordOptions);
 
+  var passwordCharacters = {
+      length: passwordLength,
+      lowerCase: hasLowercase,
+      upperCase: hasUppercase,
+      numeric: hasNumeric,
+      special: hasSpecial,
+  };
+  
+  return passwordCharacters;
+  
+function generatePassword() {
+
+}
   
