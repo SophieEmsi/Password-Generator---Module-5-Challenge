@@ -88,9 +88,6 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-// Function to prompt user for password options
-
-
 
 function getPasswordOptions() {
   var passwordLength = prompt("Select how many characters between 8 - 128 you would like your password to be");
@@ -161,6 +158,18 @@ for (i = 0; i < options.length; ++i) {
    finalPassword.push(passwordSelection[randomSelection])
 }
 
+  console.log(finalPassword);
+
   return finalPassword;
 }
 
+var generateBtn = document.querySelector('#generate');
+
+function writePassword() {
+  var password = generatePassword(); 
+  var passwordText = document.querySelector('#password');
+
+  passwordText.value = password;
+}
+
+generateBtn.addEventListener('click', writePassword);
